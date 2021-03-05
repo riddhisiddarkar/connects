@@ -1,0 +1,12 @@
+.btn {
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  border: none;
+  background: linear-gradient(
+    90deg,
+    #ff7a00 0%,
+    rgba(255, 153, 0, 0.76) 208.81%
+  );
+  border-radius: 33px;
+  padding: 10px 20px;
+  color: white;
+}

@@ -1,0 +1,26 @@
+.registerInput_label {
+  font-family: "Poppins", sans-serif;
+  display: block;
+  text-align: left;
+  font-size: 12px;
+}
+.registerInput_input {
+  border: none;
+  border: 1px solid #929292;
+  border-radius: 20px;
+  justify-self: flex-start;
+  outline: none;
+  padding: 5px;
+  width: 300px;
+}
+@media (max-width: 1024px) {
+  .registerInput_input {
+    width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .input {
+    margin-bottom: 20px;
+  }
+}

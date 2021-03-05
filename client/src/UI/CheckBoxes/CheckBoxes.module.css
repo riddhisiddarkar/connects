@@ -1,0 +1,8 @@
+.checkbox {
+  display: flex;
+  align-items: center;
+}
+.checkbox_label {
+  margin-left: 2px;
+  font-size: 12px;
+}

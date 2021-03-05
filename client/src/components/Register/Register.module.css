@@ -1,0 +1,147 @@
+.regiterpage {
+  background-color: var(--backgroundColor);
+  min-height: 100vh;
+  width: 100vw;
+}
+
+.regiterpage > h2 {
+  color: var(--textColor);
+  font-size: 30px;
+  font-family: "Arvo", serif;
+  text-align: left;
+  padding: 50px;
+}
+
+input[type="file"] {
+  position: absolute;
+  z-index: -1;
+  bottom: 20px;
+  outline: none;
+  border: none;
+  left: 8px;
+  font-size: 17px;
+  display: none;
+  color: #b8b8b8;
+}
+.buttonWrap {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.button {
+  display: flex;
+  padding: 12px 18px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: gray;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  height: 50px;
+  width: 50px;
+}
+
+.registerform_row,
+.registerform_checkbox_row {
+  display: flex;
+  flex-direction: row;
+  /* width: 60vw; */
+  margin-bottom: 30px;
+  justify-content: space-between;
+  align-items: center;
+}
+.registerform_component {
+  display: flex;
+  justify-content: space-around;
+}
+.uploadImage {
+  margin-left: 2px;
+  font-family: "Poppins", sans-serif;
+  color: var(--textColor);
+}
+.handshake {
+  margin-right: 20px;
+  width: 200px;
+}
+.checkboc_category {
+  font-family: "Poppins", sans-serif;
+  display: block;
+  text-align: left;
+  font-size: 12px;
+}
+.registerform {
+  /* padding: 0px 10vw; */
+  width: 60vw;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: auto;
+}
+.create_account {
+  display: flex;
+  align-items: flex-start;
+}
+.create_account p {
+  color: var(--textColor);
+  font-size: 10px;
+  margin-left: 4px;
+}
+.already_account {
+  color: var(--textColor);
+  font-size: 10px;
+  margin: 10px auto;
+  font-weight: bold;
+}
+.extraspace {
+  margin-bottom: 20px;
+}
+@media (max-width: 1024px) {
+  .registerform {
+    padding: 10px;
+  }
+}
+@media (max-width: 700px) {
+  .handshake {
+    display: none;
+  }
+  .registerform {
+    width: 100vw;
+    padding: 0 8vw;
+  }
+  .create_account {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}
+@media (max-width: 480px) {
+  .registerform {
+    width: 300px;
+  }
+  .registerform_row,
+  .registerform_checkbox_row {
+    flex-direction: column;
+    margin-bottom: 0px;
+  }
+  .buttonWrap {
+    margin-bottom: 20px;
+  }
+  .checkboc_category {
+    margin-left: 15px;
+  }
+  .registerform_checkbox_row {
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    margin-left: 35px;
+  }
+  .registerform_component button,
+  .create_account > button {
+    display: block;
+    margin: 10px auto;
+  }
+}
