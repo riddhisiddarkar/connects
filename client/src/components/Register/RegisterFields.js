@@ -1,6 +1,6 @@
 export const categorys = [
   {
-    title: "Old Age Home",
+    title: "Old Age",
     name: "old",
   },
   {

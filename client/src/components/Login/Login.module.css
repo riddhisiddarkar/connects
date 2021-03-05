@@ -19,9 +19,6 @@
   color: var(--textColor);
 }
 @media (max-width: 700px) {
-  .loginContainer {
-    width: 300px;
-  }
   .loginContainer input {
     width: 200px;
   }

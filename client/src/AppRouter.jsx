@@ -5,6 +5,7 @@ import AllNGOs from "./components/AllNGOs/AllNGOs";
 import Locate from "./components/Locate/Locate";
 import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
+import ReportProblem from "./components/ReportProblem/ReportProblem";
 
 const AppRouter = () => {
   return (
@@ -22,6 +23,9 @@ const AppRouter = () => {
         </Route>
         <Route path="/ngos">
           <AllNGOs />
+        </Route>
+        <Route path="/reportproblem">
+          <ReportProblem />
         </Route>
       </Switch>
     </Router>

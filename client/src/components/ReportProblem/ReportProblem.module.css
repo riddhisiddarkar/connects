@@ -1,0 +1,43 @@
+.reportProblem textarea {
+  width: 400px;
+  border: 1px solid var(--orangeColor);
+}
+.reportProblem h2 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.reportProblem > p {
+  margin-top: 20px;
+  font-size: 15px;
+}
+.checkboxes {
+  display: flex;
+  width: 400px;
+  justify-content: space-between;
+}
+.radio_btns {
+  display: flex;
+  width: 400px;
+  justify-content: space-between;
+}
+.radio_btns div {
+  display: flex;
+  align-items: center;
+}
+.radio_btns label {
+  font-size: 12px;
+  margin-left: 5px;
+}
+.reportProblem button {
+  display: block;
+  margin: auto;
+  margin-top: 25px;
+}
+@media (max-width: 700px) {
+  .reportProblem textarea,
+  .radio_btns,
+  .checkboxes {
+    width: 250px;
+    flex-direction: column;
+  }
+}
