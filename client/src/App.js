@@ -6,6 +6,7 @@ import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
 import Locate from "./components/Locate/Locate";
 import { addUser } from "./features/userSlice";
+import AppRouter from "./AppRouter";
 
 function App() {
   const dispatch = useDispatch();
@@ -19,9 +20,7 @@ function App() {
 
   return (
     <div className="App">
-      {/* <Register /> */}
-      {/* <Login /> */}
-      <Locate />
+      <AppRouter />
     </div>
   );
 }

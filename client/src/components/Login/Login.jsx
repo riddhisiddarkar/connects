@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 import styles from "./Login.module.css";
 import Input from "../../UI/Input/Input";
@@ -9,6 +10,11 @@ import { addUser } from "../../features/userSlice";
 
 const Login = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   const loginuser = () => {
     axios
       .post("http://localhost:5000/user/login", {
@@ -26,8 +32,7 @@ const Login = () => {
         console.log(err);
       });
   };
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+
   return (
     <div className={styles.login}>
       <div className={styles.loginContainer}>
@@ -47,7 +52,10 @@ const Login = () => {
         />
         <Button onclick={() => loginuser()} title="Login" />
         <p className={styles.or}>OR</p>
-        <Button onclick={() => loginuser()} title="Create Account" />
+        <Button
+          onclick={() => history.push("/register")}
+          title="Create Account"
+        />
       </div>
     </div>
   );
