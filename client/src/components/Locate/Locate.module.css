@@ -1,0 +1,21 @@
+.locationPage {
+  padding-left: 50px;
+}
+.locateSection {
+  display: flex;
+  align-items: flex-end;
+}
+.locateSection > div > button {
+  margin-left: 20px;
+}
+
+@media (max-width: 500px) {
+  .locateSection {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .locateSection > div > button {
+    margin-left: 0px;
+    margin-right: 20px;
+  }
+}
