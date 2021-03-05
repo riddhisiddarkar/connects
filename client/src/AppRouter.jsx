@@ -1,5 +1,6 @@
 import React from "react";
 import { Switch, BrowserRouter as Router, Route } from "react-router-dom";
+import AllNGOs from "./components/AllNGOs/AllNGOs";
 
 import Locate from "./components/Locate/Locate";
 import Login from "./components/Login/Login";
@@ -18,6 +19,9 @@ const AppRouter = () => {
         </Route>
         <Route path="/locate">
           <Locate />
+        </Route>
+        <Route path="/ngos">
+          <AllNGOs />
         </Route>
       </Switch>
     </Router>
