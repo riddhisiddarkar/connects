@@ -7,6 +7,7 @@ import styles from "./Login.module.css";
 import Input from "../../UI/Input/Input";
 import Button from "../../UI/Button/Button";
 import { addUser } from "../../features/userSlice";
+import ModalStyle from "../../UI/ModalStyle/ModalStyle";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -34,7 +35,7 @@ const Login = () => {
   };
 
   return (
-    <div className={styles.login}>
+    <ModalStyle>
       <div className={styles.loginContainer}>
         <h2 className={styles.loginText}>Login</h2>
 
@@ -57,7 +58,7 @@ const Login = () => {
           title="Create Account"
         />
       </div>
-    </div>
+    </ModalStyle>
   );
 };
 
