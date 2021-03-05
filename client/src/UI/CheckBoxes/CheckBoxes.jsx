@@ -2,12 +2,19 @@ import React from "react";
 
 import styles from "./CheckBoxes.module.css";
 
-const CheckBox = ({ options }) => {
+const CheckBox = ({ options, onchange }) => {
   return (
     <>
       {options?.map((ele, i) => (
         <div className={styles.checkbox}>
-          <input type="checkbox" key={i} name="name" value="value" />
+          <input
+            type="checkbox"
+            key={i}
+            name="name"
+            value="value"
+            name={ele.name}
+            onChange={onchange}
+          />
           <label className={styles.checkbox_label}>{ele.title}</label>
         </div>
       ))}

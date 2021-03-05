@@ -2,8 +2,13 @@ import React from "react";
 
 import styles from "./Button.module.css";
 
-const Button = () => {
-  return <button className={styles.btn}>Create account</button>;
+const Button = ({ onclick, title }) => {
+  console.log(onclick);
+  return (
+    <button className={styles.btn} onClick={onclick}>
+      {title}
+    </button>
+  );
 };
 
 export default Button;

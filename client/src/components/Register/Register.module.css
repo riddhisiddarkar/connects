@@ -66,7 +66,8 @@ input[type="file"] {
   margin-right: 20px;
   width: 200px;
 }
-.checkboc_category {
+.checkboc_category,
+.selectLocationsHeading {
   font-family: "Poppins", sans-serif;
   display: block;
   text-align: left;
@@ -84,7 +85,8 @@ input[type="file"] {
 }
 .create_account {
   display: flex;
-  align-items: flex-start;
+  flex-direction: r;
+  align-items: center;
 }
 .create_account p {
   color: var(--textColor);
@@ -100,9 +102,19 @@ input[type="file"] {
 .extraspace {
   margin-bottom: 20px;
 }
+.selectLocation {
+  border-radius: 20px;
+  width: 300px;
+  outline: none;
+  padding: 5px;
+}
 @media (max-width: 1024px) {
   .registerform {
     padding: 10px;
+  }
+
+  .selectLocation {
+    width: 200px;
   }
 }
 @media (max-width: 700px) {
@@ -143,5 +155,9 @@ input[type="file"] {
   .create_account > button {
     display: block;
     margin: 10px auto;
+  }
+  .selectLocation {
+    margin-bottom: 20px;
+    margin-top: 10px;
   }
 }

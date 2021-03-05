@@ -58,9 +58,14 @@ const ngoSchema = new mongoose.Schema({
   website: {
     type: String,
   },
-  accepting: {
-    type: Array,
-    default: [],
+  money: {
+    type: Boolean,
+  },
+  food: {
+    type: Boolean,
+  },
+  items: {
+    type: Boolean,
   },
   pending: [donationSchema],
   completed: [donationSchema],

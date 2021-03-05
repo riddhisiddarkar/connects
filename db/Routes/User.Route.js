@@ -10,13 +10,17 @@ router.get("/", (req, res) => {
 });
 
 router.post("/register", (req, res) => {
+  console.log(req.body);
   new ngo({
     name: req.body.name,
     email: req.body.email,
     location: req.body.location,
-    phoneNo: req.body.phoneNo,
+    phoneNo: req.body.phoneno,
     category: req.body.category,
-    accepting: req.body.accepting,
+    money: req.body.money,
+    food: req.body.food,
+    item: req.body.item,
+    website: req.body.website,
   })
     .save()
     .then((data) => {
@@ -57,12 +61,16 @@ router.post("/login", (req, res) => {
     .then((data) => {
       console.log(data);
       bcrypt.compare(req.body.password, data.password, function (err, result) {
-        if (result)
-          res.status(200).send({
-            id: data._id,
-            ngoId: data.ngoId,
-          });
-        else res.status(401).send("Passwords donot match");
+        if (result) {
+          ngo
+            .findById(data.ngoId)
+            .then((r) => {
+              let k = r;
+              k["id"] = data._id;
+              res.status(200).send(k);
+            })
+            .catch((err) => res.status(401).send("Something went wrong"));
+        } else res.status(401).send("Passwords donot match");
       });
     })
     .catch((err) => {
