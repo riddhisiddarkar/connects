@@ -1,6 +1,7 @@
 import React from "react";
 import { Switch, BrowserRouter as Router, Route } from "react-router-dom";
 import AllNGOs from "./components/AllNGOs/AllNGOs";
+import Footer from "./components/Footer/Footer";
 import Home from "./components/Home/Home";
 
 import Locate from "./components/Locate/Locate";
@@ -33,6 +34,7 @@ const AppRouter = () => {
           <ReportProblem />
         </Route>
       </Switch>
+      <Footer />
     </Router>
   );
 };

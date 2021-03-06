@@ -274,15 +274,7 @@ h2 {
 .socials img {
   margin: 0 0.5rem;
 }
-footer {
-  margin-top: 2rem;
-  width: 100%;
-  background-color: #3f3f3f;
-  color: white;
-  font-family: "Poppins", sans-serif;
-  text-align: center;
-  padding: 1rem 0;
-}
+
 @media only screen and (max-width: 1040px) {
   .row nav .g2 {
     width: 30%;
