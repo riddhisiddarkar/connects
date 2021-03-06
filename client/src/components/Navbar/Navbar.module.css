@@ -104,21 +104,21 @@
 	.g2 a {
 		margin: 0.5rem 0;
 	}
-	#nav-check:checked ~ nav {
+	.nav_check:checked ~ nav {
 		opacity: 1;
 		visibility: visible;
 	}
-	#nav-check:focus ~ .nav-toggler {
+	.nav_check:focus ~ .nav-toggler {
 		box-shadow: 0 0 2px #000000;
 	}
-	#nav-check:checked ~ .nav-toggler span {
+	.nav_check:checked ~ .nav-toggler span {
 		background-color: transparent;
 	}
-	#nav-check:checked ~ .nav-toggler span::before {
+	.nav_check:checked ~ .nav-toggler span::before {
 		top: 0;
 		transform: rotate(45deg);
 	}
-	#nav-check:checked ~ .nav-toggler span::after {
+	.nav_check:checked ~ .nav-toggler span::after {
 		top: 0;
 		transform: rotate(-45deg);
 	}
