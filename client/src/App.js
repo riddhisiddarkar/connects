@@ -7,21 +7,21 @@ import Register from "./components/Register/Register";
 import { addUser } from "./features/userSlice";
 
 function App() {
-  const dispatch = useDispatch();
+	const dispatch = useDispatch();
 
-  useEffect(() => {
-    if (localStorage.getItem("connect2dot0")) {
-      const k = JSON.parse(localStorage.getItem("connect2dot0"));
-      dispatch(addUser(k));
-    }
-  }, []);
+	useEffect(() => {
+		if (localStorage.getItem("connect2dot0")) {
+			const k = JSON.parse(localStorage.getItem("connect2dot0"));
+			dispatch(addUser(k));
+		}
+	}, []);
 
-  return (
-    <div className="App">
-      {/* <Register /> */}
-      <Login />
-    </div>
-  );
+	return (
+		<div className="App">
+			{/* <Register /> */}
+			<Login />
+		</div>
+	);
 }
 
 export default App;
