@@ -80,6 +80,9 @@
 .donationsamt {
   display: flex;
 }
+.ngo_name option[value=""][disabled] {
+  display: none;
+}
 @media (max-width: 1024px) {
   .donate_container_right > div {
     flex-direction: column;
