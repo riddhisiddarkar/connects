@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../../UI/Button/Button";
 
 import styles from "./Navbar.module.css";
 
@@ -33,7 +34,7 @@ const Navbar = () => {
             </div>
             <div className={styles.g2}>
               <a href="#">Dashboard</a>
-              <button>Login</button>
+              <Button title="Login" />
             </div>
           </nav>
         </div>
