@@ -2,14 +2,18 @@ import React from "react";
 import Button from "../../UI/Button/Button";
 
 import styles from "./Navbar.module.css";
+import { useHistory, Link } from "react-router-dom";
 
 const Navbar = () => {
+  const history = useHistory();
   return (
     <header className={styles.header}>
       <div className={styles.container}>
         <div className={styles.row}>
           <div className={styles.logo}>
-            <a href="#">Logo</a>
+            <Link to="/" href="#">
+              Logo
+            </Link>
           </div>
           <input type="checkbox" className={styles.nav_check} />
           <label for="nav-check" className={styles.nav_toggler}>
@@ -19,22 +23,22 @@ const Navbar = () => {
             <div className={styles.g1}>
               <ul>
                 <li>
-                  <a href="#">Home</a>
+                  <Link to="/">Home</Link>
                 </li>
                 <li>
-                  <a href="#">Donate</a>
+                  <Link to="/donate">Donate</Link>
                 </li>
                 <li>
-                  <a href="#">Locate</a>
+                  <Link to="/locate">Locate</Link>
                 </li>
                 <li>
-                  <a href="#">NGO's</a>
+                  <Link to="/ngos">NGO's</Link>
                 </li>
               </ul>
             </div>
             <div className={styles.g2}>
-              <a href="#">Dashboard</a>
-              <Button title="Login" />
+              <Link to="/dashboard">Dashboard</Link>
+              <Button title="Login" onclick={() => history.push("/login")} />
             </div>
           </nav>
         </div>

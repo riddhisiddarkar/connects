@@ -3,9 +3,6 @@ import Button from "../../UI/Button/Button";
 
 import styles from "./Home.module.css";
 import coverimage from "../../assets/icons/coverimg.svg";
-import LocateHomePage from "../../assets/icons/LocateHomePage.svg";
-import edit from "../../assets/icons/edit.svg";
-import ngos from "../../assets/icons/ngos.svg";
 import spraypaint from "../../assets/icons/spraypaint.svg";
 import Untitled2 from "../../assets/icons/Untitled2.svg";
 import shadedbackground from "../../assets/images/shadedbackground.png";
@@ -14,8 +11,11 @@ import call from "../../assets/icons/call.svg";
 import insta from "../../assets/icons/Insta.svg";
 import mail from "../../assets/icons/Mail.svg";
 import twitter from "../../assets/icons/Twitter.svg";
+import { useHistory } from "react-router-dom";
+import { options, nos } from "./HomeOptions";
 
 const Home = () => {
+  const history = useHistory();
   return (
     <main>
       <div className={styles.hero_section}>
@@ -30,28 +30,12 @@ const Home = () => {
             A small donation can change <br />
             thousands of lives.
           </span>
-          <Button title="Donate" />
+          <Button title="Donate" onclick={() => history.push("/donate")} />
         </div>
         <img src={coverimage} alt="cover pic" />
       </div>
       <div className={styles.optns}>
-        {[
-          {
-            image: LocateHomePage,
-            title: "find the nearest NGO’s to your current location",
-            button_title: "Locate",
-          },
-          {
-            image: edit,
-            title: "Register your NGO here to let people connect",
-            button_title: "Register",
-          },
-          {
-            image: ngos,
-            title: "List of all NGO’s associated with our organisation",
-            button_title: "NGO'S",
-          },
-        ].map((ele, i) => (
+        {options.map((ele, i) => (
           <div
             className={[styles.optn1, styles.op]}
             key={i}
@@ -61,7 +45,10 @@ const Home = () => {
               <img src={ele.image} alt={ele.button_title} />
             </div>
             <p>{ele.title}</p>
-            <Button title={ele.button_title} />
+            <Button
+              title={ele.button_title}
+              onclick={() => history.push(`/${ele.button_link}`)}
+            />
           </div>
         ))}
       </div>
@@ -86,20 +73,7 @@ const Home = () => {
         </div>
       </div>
       <div className={styles.reach}>
-        {[
-          {
-            title: "Donation",
-            no: 120,
-          },
-          {
-            title: "NGO's",
-            no: 50,
-          },
-          {
-            title: "People Benefited",
-            no: "2B+",
-          },
-        ].map((ele, i) => (
+        {nos.map((ele, i) => (
           <div
             className={styles.r}
             style={{ background: { Untitled2 } }}
