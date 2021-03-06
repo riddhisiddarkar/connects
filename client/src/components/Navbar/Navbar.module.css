@@ -67,7 +67,11 @@
 .nav_toggler span::after {
   top: 6px;
 }
-
+.nav_check {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
 @media only screen and (max-width: 1040px) {
   .row nav .g2 {
     width: 30%;

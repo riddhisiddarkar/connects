@@ -10,7 +10,7 @@ const Navbar = () => {
           <div className={styles.logo}>
             <a href="#">Logo</a>
           </div>
-          <input type="checkbox" id="nav-check" />
+          <input type="checkbox" className={styles.nav_check} />
           <label for="nav-check" className={styles.nav_toggler}>
             <span></span>
           </label>
