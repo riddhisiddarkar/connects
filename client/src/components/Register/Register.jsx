@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { v4 as uuid } from "uuid";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
+import { useSelector } from "react-redux";
 
 import styles from "./Register.module.css";
 import RegisterInput from "../../UI/Input/Input";
@@ -10,10 +11,12 @@ import CheckBox from "../../UI/CheckBoxes/CheckBoxes";
 import Button from "../../UI/Button/Button";
 import { categorys, donations } from "./RegisterFields";
 import storage from "../../firebase";
+import { selectUser } from "../../features/userSlice";
 
 const Register = () => {
   const [image, setImage] = useState("");
   const history = useHistory();
+  const user = useSelector(selectUser);
   const [info, setInfo] = useState({
     name: "",
     email: "",
@@ -34,6 +37,12 @@ const Register = () => {
     women: false,
     other: false,
   });
+
+  useEffect(() => {
+    if (user) {
+      history.push("/dashboard");
+    }
+  }, []);
 
   const addngo = (e) => {
     const id = uuid();
@@ -61,7 +70,10 @@ const Register = () => {
             accepting.Items ? (p["item"] = true) : (p["item"] = false);
             axios
               .post("http://localhost:5000/user/register", p)
-              .then((res) => console.log("Successfully added data"))
+              .then((res) => {
+                console.log("Successfully added data");
+                history.push("/dashboard");
+              })
               .catch((error) => {
                 console.log("There is error here in adding the ngo");
                 console.log(error);

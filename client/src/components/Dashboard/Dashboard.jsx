@@ -1,15 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useHistory } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import styles from "./Dashboard.module.css";
 import Button from "../../UI/Button/Button";
 import EachDonation from "./EachDonation/EachDonation";
+import { selectUser } from "../../features/userSlice";
 
 const Dashboard = () => {
+  const history = useHistory();
+  const user = useSelector(selectUser);
+
+  useEffect(() => {
+    if (!user) {
+      history.push("/login");
+    }
+  }, []);
+
   return (
     <div className={styles.donationpage}>
       <p className={styles.donation_text}>Donations</p>
       <div className={styles.donationpage_details}>
-        <img className={styles.donationpage.ngoimg} src="" />
+        <img className={styles.donationpage_ngoimg} src="" />
         <p className={styles.donationpage_ngoname}>BATATA MATATA FOUNDATION</p>
         <p className={styles.donationpage_location}>
           Location: India, Goa , Ponda
