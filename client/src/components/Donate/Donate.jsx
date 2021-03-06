@@ -11,6 +11,7 @@ import heart from "../../assets/icons/heart.svg";
 import { donations } from "../Register/RegisterFields";
 import RegisterInput from "../../UI/Input/Input";
 import Button from "../../UI/Button/Button";
+import axios from "axios";
 
 const Donate = () => {
   const history = useHistory();
@@ -18,6 +19,10 @@ const Donate = () => {
   const donation = useSelector(selectdonationid);
   const name = useSelector(selectdonationname);
   const [type, setType] = useState("money");
+  const [username, setUsername] = useState("");
+  const [userEmail, setUserEmail] = useState("");
+  const [address, setAddress] = useState("");
+  const [userphoneNo, setUserphoneNo] = useState("");
   const [noOfPeopleAffected, setNoOfPeopleAffected] = useState(0);
   const [custom, setCustom] = useState(false);
   const [food, setFood] = useState("");
@@ -27,10 +32,34 @@ const Donate = () => {
     if (!donation) history.push("/locate");
   }, []);
   const donate = () => {
-    console.log(noOfPeopleAffected);
-    console.log(food);
-    console.log(quantity);
-    console.log(item);
+    if (!username || !userEmail || !userphoneNo || !address) {
+      alert("pls enter all the fields");
+    } else {
+      let p = {
+        name: username,
+        email: userEmail,
+        phoneNo: userphoneNo,
+        address: address,
+        type: type,
+      };
+      if (type === "money") p["amount"] = noOfPeopleAffected;
+      else if (type === "food") {
+        p["food"] = food;
+        p["quantity"] = quantity;
+      } else {
+        p["quantity"] = quantity;
+        p["item"] = item;
+      }
+      console.log(p);
+      axios
+        .post(`http://localhost:5000/ngo/addpending/${donation}`, p)
+        .then((res) => console.log("added"))
+        .catch((error) => {
+          alert("some error occures");
+          console.log("There is an error here in adding donation");
+          console.log(error);
+        });
+    }
   };
   return (
     <div className={styles.donate}>
@@ -56,11 +85,24 @@ const Donate = () => {
         </div>
         <div className={styles.donate_container_right}>
           <div>
-            <RegisterInput type="text" placeholder="Full Name" />
-            <RegisterInput type="text" placeholder="Phone No" />
+            <RegisterInput
+              type="text"
+              placeholder="Full Name"
+              onChange={(e) => setUsername(e.target.value)}
+            />
+            <RegisterInput
+              type="text"
+              placeholder="Phone No"
+              onChange={(e) => setUserphoneNo(e.target.value)}
+            />
           </div>
           <div>
-            <RegisterInput type="email" name="email" placeholder="Email" />
+            <RegisterInput
+              type="email"
+              name="email"
+              placeholder="Email"
+              onChange={(e) => setUserEmail(e.target.value)}
+            />
             <div className={styles.ngo_name}>{name}</div>
           </div>
           <div>
@@ -68,6 +110,7 @@ const Donate = () => {
               type="text"
               name="address"
               placeholder="Your Address"
+              onChange={(e) => setAddress(e.target.value)}
             />
           </div>
           {type === "money" && (

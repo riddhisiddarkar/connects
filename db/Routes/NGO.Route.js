@@ -48,14 +48,14 @@ router.post("/addpending/:id", (req, res) => {
   };
 
   switch (type) {
-    case "MONEY":
+    case "money":
       newPendingTask["amount"] = amount;
       break;
-    case "FOOD":
+    case "food":
       newPendingTask["food"] = food;
       newPendingTask["quantity"] = quantity;
       break;
-    case "ITEM":
+    case "items":
       newPendingTask["item"] = item;
       newPendingTask["quantity"] = quantity;
   }
