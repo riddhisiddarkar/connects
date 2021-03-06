@@ -1,6 +1,8 @@
 import React from "react";
 import { Switch, BrowserRouter as Router, Route } from "react-router-dom";
 import AllNGOs from "./components/AllNGOs/AllNGOs";
+import Dashboard from "./components/Dashboard/Dashboard";
+import Donate from "./components/Donate/Donate";
 import Footer from "./components/Footer/Footer";
 import Home from "./components/Home/Home";
 
@@ -32,6 +34,12 @@ const AppRouter = () => {
         </Route>
         <Route path="/reportproblem">
           <ReportProblem />
+        </Route>
+        <Route path="/donate">
+          <Donate />
+        </Route>
+        <Route path="/dashboard">
+          <Dashboard />
         </Route>
       </Switch>
       <Footer />

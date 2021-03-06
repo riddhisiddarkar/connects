@@ -12,11 +12,11 @@ const Navbar = () => {
 				<div className={styles.row}>
 					<div className={styles.logo}>
 						<Link to="/" href="#">
-							Connect it
+							Logo
 						</Link>
 					</div>
 					<input type="checkbox" className={styles.nav_check} />
-					<label for="nav-check" className={styles.nav_toggler}>
+					<label htmlFor="nav-check" className={styles.nav_toggler}>
 						<span></span>
 					</label>
 					<nav className={styles.nav}>
