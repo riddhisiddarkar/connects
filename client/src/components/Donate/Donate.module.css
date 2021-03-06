@@ -1,5 +1,27 @@
-.donate {
+.donate img {
+  height: 60px;
+  width: 60px;
+  align-self: center;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
 }
+.donate > h1 {
+  margin-top: 3rem;
+  text-align: center;
+  font-family: "Arvo", "poppins";
+  font-size: 1.8rem;
+
+  letter-spacing: 3px;
+  margin-bottom: 2rem;
+}
+.donate span {
+  color: var(--orangeColor);
+  font-family: "Arvo", "poppins";
+  letter-spacing: 3px;
+}
+
 .donate_container {
   display: flex;
   width: 100%;
@@ -8,6 +30,10 @@
   flex: 0.3;
   min-width: 250px;
   border-right: 1px solid #a9a9a9;
+}
+.donate > p {
+  padding-left: 20px;
+  font-weight: bolder;
 }
 .donate_container_right {
   flex: 0.7;

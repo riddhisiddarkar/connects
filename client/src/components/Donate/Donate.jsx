@@ -63,7 +63,10 @@ const Donate = () => {
   };
   return (
     <div className={styles.donate}>
-      <p>No act of kindness, no matter how small, is ever wasted.</p>
+      <h1>
+        No act of<span> kindness</span>, no matter how small, is ever{" "}
+        <span>wasted</span>.
+      </h1>
       <img src={heart} alt="Trust" />
       <p>Donate</p>
       <div className={styles.donate_container}>
