@@ -163,6 +163,7 @@ nav {
 .reach {
 	width: 84.33vw;
 	margin: auto;
+	margin-top: 7rem;
 	text-align: center;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
@@ -200,6 +201,7 @@ nav {
 .icons img {
 	margin-top: 2rem;
 	background: transparent;
+	margin-top: 10rem;
 }
 
 .about {
