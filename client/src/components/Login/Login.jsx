@@ -1,20 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 
 import styles from "./Login.module.css";
 import Input from "../../UI/Input/Input";
 import Button from "../../UI/Button/Button";
-import { addUser } from "../../features/userSlice";
+import { addUser, selectUser } from "../../features/userSlice";
 import ModalStyle from "../../UI/ModalStyle/ModalStyle";
 
 const Login = () => {
   const dispatch = useDispatch();
   const history = useHistory();
+  const user = useSelector(selectUser);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  useEffect(() => {
+    if (user) {
+      history.push("/dashboard");
+    }
+  }, []);
 
   const loginuser = () => {
     axios
@@ -27,6 +34,7 @@ const Login = () => {
         console.log(res);
         dispatch(addUser(res.data));
         localStorage.setItem("connect2dot0", JSON.stringify(res.data));
+        history.push("/dashboard");
       })
       .catch((err) => {
         console.log("There is an error here in logging the user in");
