@@ -24,17 +24,18 @@ const Dashboard = () => {
           className={styles.donationpage_ngoimg}
           src="https://upvey.com/wp-content/uploads/2020/04/NGO-Hindi.jpg"
         />
-        <p className={styles.donationpage_ngoname}>BATATA MATATA FOUNDATION</p>
+        <p className={styles.donationpage_ngoname}>{user.name}</p>
 
         <div className={styles.other}>
-          <p className={styles.donationpage_location}>
-            Location: India, Goa , Ponda
+          <p className={styles.donationpage_location}>{user.location}</p>
+          <p className={styles.donationpage_contact}>Contact: {user.phoneNo}</p>
+          <p className={styles.donationpage_email}>Email: {user.email}</p>
+          <p className={styles.donationpage_type}>
+            Type:
+            {user.category[0].old && "Old age home, "}
+            {user.category[0].children && "Orphange, "}
+            {user.category[0].others && "Others, "}
           </p>
-          <p className={styles.donationpage_contact}>Contact: 9325995634</p>
-          <p className={styles.donationpage_email}>
-            Email: gandhidheeraj9@gmail.com
-          </p>
-          <p className={styles.donationpage_type}>Type: Orphanage</p>
         </div>
         <Button title="View Website" />
       </div>
