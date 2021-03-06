@@ -1,3 +1,6 @@
+.donate {
+  min-height: calc(100vh - 163px);
+}
 .donate img {
   height: 60px;
   width: 60px;
