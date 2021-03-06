@@ -1,6 +1,69 @@
 .allngospage {
 }
 .allngospage_heading {
+	margin-top: 3rem;
+	text-align: center;
+	font-family: "Arvo", "poppins";
+	font-size: 1.8rem;
+	letter-spacing: 3px;
+	margin-bottom: 4rem;
+}
+.allngospage_heading span {
+	color: var(--orangeColor);
+	font-family: "Arvo", "poppins";
+	letter-spacing: 3px;
 }
 .allngospage_container {
+	display: grid;
+	align-self: center;
+	grid-template-columns: 1fr 1fr 1fr;
+	margin: 5rem 8rem;
+	grid-gap: 4rem;
+}
+@media only screen and (max-width: 1166px) {
+	.allngospage_container {
+		display: grid;
+		align-self: center;
+		grid-template-columns: 1fr 1fr 1fr;
+		margin: 5rem 5rem;
+		grid-gap: 4rem;
+	}
+}
+@media only screen and (max-width: 1050px) {
+	.allngospage_container {
+		display: grid;
+		align-self: center;
+		grid-template-columns: 1fr 1fr 1fr;
+		margin: 5rem 2rem;
+		grid-gap: 2rem;
+	}
+}
+@media only screen and (max-width: 1050px) {
+	.allngospage_container {
+		margin: 5rem 3rem;
+		grid-gap: 2rem;
+	}
+}
+@media only screen and (max-width: 730px) {
+	.allngospage_container {
+		grid-template-columns: 1fr 1fr;
+		margin: 5rem 5rem;
+	}
+}
+@media only screen and (max-width: 610px) {
+	.allngospage_container {
+		grid-template-columns: 1fr 1fr;
+		margin: 5rem 2rem;
+	}
+}
+@media only screen and (max-width: 520px) {
+	.allngospage_container {
+		grid-template-columns: 1fr;
+		margin: 3rem 15%;
+	}
+	.allngospage_heading {
+		font-size: 1rem;
+		letter-spacing: 3px;
+		margin-bottom: 1rem;
+	}
 }

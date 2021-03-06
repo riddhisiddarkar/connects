@@ -9,20 +9,20 @@ import { addUser } from "./features/userSlice";
 import AppRouter from "./AppRouter";
 
 function App() {
-  const dispatch = useDispatch();
+	const dispatch = useDispatch();
 
-  useEffect(() => {
-    if (localStorage.getItem("connect2dot0")) {
-      const k = JSON.parse(localStorage.getItem("connect2dot0"));
-      dispatch(addUser(k));
-    }
-  }, []);
+	useEffect(() => {
+		if (localStorage.getItem("connect2dot0")) {
+			const k = JSON.parse(localStorage.getItem("connect2dot0"));
+			dispatch(addUser(k));
+		}
+	}, []);
 
-  return (
-    <div className="App">
-      <AppRouter />
-    </div>
-  );
+	return (
+		<div className="App">
+			<AppRouter />
+		</div>
+	);
 }
 
 export default App;
