@@ -28,10 +28,22 @@ const Donate = () => {
   const [food, setFood] = useState("");
   const [quantity, setQuantity] = useState(0);
   const [item, setItem] = useState("");
+  const [ngos, setNgos] = useState([]);
+  const [selectedngo, setSelectedngo] = useState(donation);
   useEffect(() => {
-    if (!donation) history.push("/locate");
+    axios
+      .get("http://localhost:5000/ngo/all")
+      .then((res) => {
+        setNgos(res.data);
+      })
+      .catch((error) => {
+        console.log("There is an error in getting the ngo");
+        console.log(error);
+      });
   }, []);
-  const donate = () => {
+
+  const donate = (e) => {
+    e.prventDefualt();
     if (!username || !userEmail || !userphoneNo || !address) {
       alert("pls enter all the fields");
     } else {
@@ -52,7 +64,7 @@ const Donate = () => {
       }
       console.log(p);
       axios
-        .post(`http://localhost:5000/ngo/addpending/${donation}`, p)
+        .post(`http://localhost:5000/ngo/addpending/${selectedngo}`, p)
         .then((res) => console.log("added"))
         .catch((error) => {
           alert("some error occures");
@@ -61,6 +73,8 @@ const Donate = () => {
         });
     }
   };
+  console.log(selectedngo);
+  console.log(ngos);
   return (
     <div className={styles.donate}>
       <h1>
@@ -69,10 +83,11 @@ const Donate = () => {
       </h1>
       <img src={heart} alt="Trust" />
       <p>Donate</p>
-      <div className={styles.donate_container}>
+      <form className={styles.donate_container}>
         <div className={styles.donate_container_left}>
           {donations.map((ele, i) => (
             <div
+              key={i}
               className={styles.donate_categories}
               style={{
                 background:
@@ -106,7 +121,21 @@ const Donate = () => {
               placeholder="Email"
               onChange={(e) => setUserEmail(e.target.value)}
             />
-            <div className={styles.ngo_name}>{name}</div>
+            {donation ? (
+              <div className={styles.ngo_name}>{name}</div>
+            ) : (
+              <select
+                value={selectedngo}
+                className={styles.ngo_name}
+                onChange={(e) => setSelectedngo(e.target.value)}
+              >
+                {ngos.map((ele, i) => (
+                  <option key={i} value={ele._id}>
+                    {ele.name}
+                  </option>
+                ))}
+              </select>
+            )}
           </div>
           <div>
             <RegisterInput
@@ -282,9 +311,9 @@ const Donate = () => {
               />
             </div>
           )}
-          <Button title="Donate" onclick={donate} />
+          <Button title="Donate" onclick={(e) => donate(e)} />
         </div>
-      </div>
+      </form>
     </div>
   );
 };
