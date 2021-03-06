@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { v4 as uuid } from "uuid";
+import { useHistory } from "react-router-dom";
+import axios from "axios";
 
 import styles from "./Register.module.css";
 import RegisterInput from "../../UI/Input/Input";
@@ -8,28 +10,44 @@ import CheckBox from "../../UI/CheckBoxes/CheckBoxes";
 import Button from "../../UI/Button/Button";
 import { categorys, donations } from "./RegisterFields";
 import storage from "../../firebase";
-import axios from "axios";
 
 const Register = () => {
   const [image, setImage] = useState("");
+  const history = useHistory();
+  const [info, setInfo] = useState({
+    name: "",
+    email: "",
+    password: "",
+    phoneno: "",
+    location: "",
+    image: "",
+    website: "",
+  });
+  const [accepting, setAccepting] = useState({
+    money: true,
+    food: false,
+    Items: false,
+  });
+  const [category, setCategory] = useState({
+    old: false,
+    children: false,
+    women: false,
+    other: false,
+  });
+
   const addngo = (e) => {
     const id = uuid();
     e.preventDefault();
     const uploadTask = storage.ref(`/images/${id}`).put(image);
-    //initiates the firebase side uploading
     uploadTask.on(
       "state_changed",
       (snapShot) => {
-        //takes a snap shot of the process as it is happening
         console.log(snapShot);
       },
       (err) => {
-        //catches the errors
         console.log(err);
       },
       () => {
-        // gets the functions from storage refences the image storage in firebase by the children
-        // gets the download url then sets the image from firebase as the value for the imgUrl key:
         storage
           .ref("images")
           .child(id)
@@ -52,6 +70,7 @@ const Register = () => {
       }
     );
   };
+
   const selectImage = (e) => {
     console.log(e.target.files.length);
     if (e.target.files && e.target.files[0]) {
@@ -61,7 +80,7 @@ const Register = () => {
         console.log(e.target.value);
         // setImage([e.target.value]);
       };
-      reader.readAsDataURL(e.target.files[0]); // convert to base64 string
+      reader.readAsDataURL(e.target.files[0]);
     }
   };
 
@@ -72,38 +91,20 @@ const Register = () => {
     });
   };
 
-  const [info, setInfo] = useState({
-    name: "",
-    email: "",
-    password: "",
-    phoneno: "",
-    location: "",
-    image: "",
-    website: "",
-  });
-  const [accepting, setAccepting] = useState({
-    money: true,
-    food: false,
-    Items: false,
-  });
-  const [category, setCategory] = useState({
-    old: false,
-    children: false,
-    women: false,
-    other: false,
-  });
   const selectcategory = (event) => {
     setCategory({
       ...category,
       [event.target.name]: event.target.checked,
     });
   };
+
   const selectaccepting = (event) => {
     setAccepting({
       ...accepting,
       [event.target.name]: event.target.checked,
     });
   };
+
   return (
     <div className={styles.regiterpage}>
       <h2>Create Account</h2>
@@ -192,7 +193,7 @@ const Register = () => {
             </p>
           </div>
           <p className={styles.already_account}>Already have an account?</p>
-          <Button title="Login" />
+          <Button title="Login" onclick={() => history.push("/login")} />
         </form>
         <img src={handshake} alt="handshake" className={styles.handshake} />
       </div>

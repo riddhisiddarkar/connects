@@ -1,0 +1,15 @@
+.ngolocate_container {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  border-radius: 9px;
+  border: 1px solid rgba(255, 153, 0, 0.76);
+  width: 80vw;
+  margin: 20px 0 0 0;
+  align-items: center;
+}
+.ngolocate_details {
+  color: var(--textColor);
+  font-size: 12px;
+}

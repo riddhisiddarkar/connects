@@ -1,0 +1,135 @@
+.header {
+  padding: 1rem;
+  position: relative;
+}
+.logo a {
+  font-size: 1.5rem;
+  margin-right: 2rem;
+}
+.g1 ul,
+.g2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.g1 {
+  width: 40%;
+}
+.g2 {
+  width: 25%;
+}
+.g1 ul li {
+  list-style: none;
+}
+.row,
+.nav {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav_toggler {
+  height: 1.7rem;
+  width: 2rem;
+  background-color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.nav_toggler span {
+  display: block;
+  height: 0.1rem;
+  background-color: #161616;
+  width: 1.4rem;
+  position: relative;
+}
+.container a {
+  text-decoration: none;
+  color: #575757;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+}
+.nav_toggler span::before,
+.nav_toggler span::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #161616;
+  left: 0;
+}
+.nav_toggler span::before {
+  top: -6px;
+}
+.nav_toggler span::after {
+  top: 6px;
+}
+.nav_check {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+@media only screen and (max-width: 1040px) {
+  .row nav .g2 {
+    width: 30%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .nav-toggler {
+    display: flex;
+  }
+  header .row nav {
+    border-top: 1px solid rgba(44, 42, 42, 0.2);
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0 1.5rem 0;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 10;
+  }
+  .g1 ul,
+  .g2 {
+    flex-direction: column;
+    align-items: center;
+  }
+  .g1 ul li,
+  .g2 a {
+    margin: 0.5rem 0;
+  }
+  #nav-check:checked ~ nav {
+    opacity: 1;
+    visibility: visible;
+  }
+  #nav-check:focus ~ .nav-toggler {
+    box-shadow: 0 0 2px #000000;
+  }
+  #nav-check:checked ~ .nav-toggler span {
+    background-color: transparent;
+  }
+  #nav-check:checked ~ .nav-toggler span::before {
+    top: 0;
+    transform: rotate(45deg);
+  }
+  #nav-check:checked ~ .nav-toggler span::after {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+}
+
+@media only screen and (max-width: 440px) {
+  .nav-toggler {
+    height: 1.5rem;
+    width: 1.7rem;
+  }
+  .nav-toggler span {
+    width: 1rem;
+  }
+}

@@ -11,7 +11,6 @@ const CheckBox = ({ options, onchange }) => {
             type="checkbox"
             key={i}
             name="name"
-            value="value"
             name={ele.name}
             onChange={onchange}
           />
