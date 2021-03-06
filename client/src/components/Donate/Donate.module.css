@@ -1,0 +1,53 @@
+.donate {
+}
+.donate_container {
+  display: flex;
+  width: 100%;
+}
+.donate_container_left {
+  flex: 0.3;
+  min-width: 250px;
+  border-right: 1px solid #a9a9a9;
+}
+.donate_container_right {
+  flex: 0.7;
+  padding: 0px 10vw;
+}
+.donate_container_right > div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.donate_categories {
+  border-radius: 33px;
+  width: 120px;
+  text-align: center;
+  color: white;
+  padding: 10px 20px;
+  margin: 15px auto;
+}
+.ngo_name {
+  border: none;
+  border: 1px solid #929292;
+  border-radius: 20px;
+  justify-self: flex-start;
+  outline: none;
+  padding: 5px;
+  width: 300px;
+  background-color: white;
+  color: var(--textColor);
+  font-size: 12px;
+  font-family: "Poppins", sans-serif;
+}
+.moneydonation {
+  display: flex;
+  flex-direction: column;
+}
+.moneydonation > div {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+.donationsamt {
+  display: flex;
+}

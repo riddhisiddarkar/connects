@@ -16,7 +16,7 @@ const Navbar = () => {
             </Link>
           </div>
           <input type="checkbox" className={styles.nav_check} />
-          <label for="nav-check" className={styles.nav_toggler}>
+          <label htmlFor="nav-check" className={styles.nav_toggler}>
             <span></span>
           </label>
           <nav className={styles.nav}>
