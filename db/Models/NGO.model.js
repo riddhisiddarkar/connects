@@ -67,6 +67,9 @@ const ngoSchema = new mongoose.Schema({
   items: {
     type: Boolean,
   },
+  image: {
+    type: String,
+  },
   pending: [donationSchema],
   completed: [donationSchema],
 });

@@ -1,71 +1,70 @@
 .donationpage {
-	display: grid;
-	grid-template-columns: 1fr 2fr;
-	margin: 0 5rem;
-	margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  margin: 0 5rem;
+  margin-top: 2rem;
 }
 .donationpage_details {
-	display: flex;
-	flex-direction: column;
-
-	padding-top: 1rem;
-	background-color: white;
-	height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+  background-color: white;
+  height: 100vh;
 }
 .donationpage_ngoimg {
-	width: 100px;
-	align-self: center;
-	height: 100px;
-	border-radius: 50% 50%;
-	margin-top: 2rem;
-	margin-bottom: 1rem;
+  width: 100px;
+  align-self: center;
+  height: 100px;
+  border-radius: 50% 50%;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
 }
 .donationpage_ngoname {
-	align-self: center;
-	font-weight: 800;
+  align-self: center;
+  font-weight: 800;
 }
 .other p {
-	margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .other {
-	margin-top: 2rem;
-	align-self: center;
+  margin-top: 2rem;
+  align-self: center;
 }
 .donationpage Button {
-	margin-top: 1rem;
-	width: 40%;
-	align-self: center;
-	padding: 0.5rem;
+  margin-top: 1rem;
+  width: 40%;
+  align-self: center;
+  padding: 0.5rem;
 }
 .donations {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 .donation_text {
-	align-self: center;
-	margin-top: 2rem;
-	font-size: 1.4rem;
-	margin-bottom: 3rem;
+  align-self: center;
+  margin-top: 2rem;
+  font-size: 1.4rem;
+  margin-bottom: 3rem;
 }
 
 .bckgnd {
-	width: 100%;
-	height: 80vh;
-	margin-top: 5rem;
-	background: rgba(255, 225, 180, 0.76);
-	z-index: -4;
-	position: absolute;
-	left: 0;
+  width: 100%;
+  height: 80vh;
+  margin-top: 5rem;
+  background: rgba(255, 225, 180, 0.76);
+  z-index: -4;
+  position: absolute;
+  left: 0;
 }
 .totalamt {
-	align-self: flex-end;
-	margin-right: 5rem;
+  align-self: flex-end;
+  margin-right: 5rem;
 }
 .value {
-	margin-top: 0.5rem;
-	text-align: center;
-	background-color: white;
-	padding: 0.5rem 1rem;
-	border-radius: 10px;
+  margin-top: 0.5rem;
+  text-align: center;
+  background-color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
 }
