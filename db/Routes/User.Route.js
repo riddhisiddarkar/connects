@@ -21,6 +21,7 @@ router.post("/register", (req, res) => {
     food: req.body.food,
     item: req.body.item,
     website: req.body.website,
+    image: req.body.image,
   })
     .save()
     .then((data) => {
